@@ -3,124 +3,223 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>HTA Academy - 50 Khóa Học Miễn Phí</title>
+<title>Trung Tâm Khóa Học Online</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 <style>
-body{margin:0;font-family:Segoe UI,sans-serif;background:#0f172a;color:#fff}
-header{background:#111827;padding:20px 0;text-align:center;font-size:24px;font-weight:bold;color:#22d3ee}
-.hero{text-align:center;padding:60px 20px;background:linear-gradient(135deg,#0f172a,#1e293b)}
-.hero h1{font-size:40px;margin:0 0 10px}
-.container{width:1200px;max-width:95%;margin:auto}
-h2{margin-top:60px;color:#22d3ee}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:25px;margin-top:20px}
-.card{background:#1e293b;border-radius:15px;overflow:hidden;transition:.3s;box-shadow:0 5px 20px rgba(0,0,0,.4)}
-.card:hover{transform:translateY(-8px)}
-.card img{width:100%;height:180px;object-fit:cover}
-.card-body{padding:20px}
-.card-body h3{margin:0 0 10px;font-size:18px}
-.card-body p{font-size:14px;opacity:.85;min-height:45px}
-.btn{display:inline-block;margin-top:10px;padding:8px 16px;background:#22d3ee;color:#000;border-radius:8px;text-decoration:none;font-weight:bold}
-footer{text-align:center;padding:40px 20px;background:#111827;margin-top:80px}
+body{
+    margin:0;
+    font-family:'Poppins',sans-serif;
+    background:#0f172a;
+    color:#fff;
+}
+header{
+    background:linear-gradient(90deg,#0ea5e9,#2563eb);
+    padding:60px 20px;
+    text-align:center;
+}
+header h1{
+    font-size:38px;
+    margin:0;
+}
+header p{
+    margin-top:10px;
+}
+nav{
+    background:#1e293b;
+    padding:15px;
+    text-align:center;
+}
+nav button{
+    margin:5px;
+    padding:8px 14px;
+    border:none;
+    border-radius:6px;
+    background:#334155;
+    color:#fff;
+    cursor:pointer;
+}
+nav button:hover{
+    background:#0ea5e9;
+}
+.container{
+    width:95%;
+    max-width:1400px;
+    margin:auto;
+}
+.section{
+    margin:50px 0;
+}
+.section h2{
+    border-left:5px solid #0ea5e9;
+    padding-left:10px;
+}
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+.card{
+    background:#1e293b;
+    border-radius:12px;
+    overflow:hidden;
+    transition:0.3s;
+}
+.card:hover{
+    transform:translateY(-5px);
+}
+.card img{
+    width:100%;
+}
+.card-content{
+    padding:15px;
+}
+.card h3{
+    font-size:15px;
+    margin-bottom:8px;
+}
+.card p{
+    font-size:13px;
+    color:#cbd5e1;
+    height:40px;
+    overflow:hidden;
+}
+.card button{
+    margin-top:10px;
+    padding:8px 12px;
+    border:none;
+    background:#0ea5e9;
+    color:#000;
+    font-weight:600;
+    border-radius:6px;
+    cursor:pointer;
+}
+footer{
+    background:#1e293b;
+    text-align:center;
+    padding:30px;
+    margin-top:50px;
+}
+.modal{
+    display:none;
+    position:fixed;
+    top:0;left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.8);
+    justify-content:center;
+    align-items:center;
+}
+.modal-content{
+    width:90%;
+    max-width:800px;
+}
+.modal iframe{
+    width:100%;
+    height:450px;
+}
+.close{
+    text-align:right;
+    font-size:20px;
+    cursor:pointer;
+    margin-bottom:5px;
+}
 </style>
 </head>
 <body>
 
-<header>HTA Academy - Hệ Thống 50 Khóa Học Miễn Phí</header>
+<header>
+<h1>HỆ SINH THÁI KHÓA HỌC ONLINE</h1>
+<p>120+ Khóa Học Miễn Phí | Facebook • TikTok • AI • Website • Affiliate</p>
+<br>
+<a href="https://youtube.com/" target="_blank" style="background:#fff;color:#000;padding:10px 20px;border-radius:8px;text-decoration:none;font-weight:600;">Đăng Ký Kênh YouTube</a>
+</header>
 
-<section class="hero">
-<h1>Facebook • TikTok • AI • Website • Quảng Cáo</h1>
-<p>Học thực chiến - Xem miễn phí - Ứng dụng ngay</p>
-</section>
+<nav id="filterButtons"></nav>
 
-<div class="container">
+<div class="container" id="coursesContainer"></div>
 
-<!-- FACEBOOK (10) -->
-<h2>Facebook (10 khóa)</h2>
-<div class="grid">
-<!-- 1 -->
-<div class="card"><img src="https://img.youtube.com/vi/YOUTUBE_ID/mqdefault.jpg"><div class="card-body"><h3>Bán hàng Group FB cơ bản</h3><p>Nắm nền tảng bán hàng trong group.</p><a href="https://youtube.com/" target="_blank" class="btn">Xem trên YouTube</a></div></div>
-<!-- 2 -->
-<div class="card"><img src="https://img.youtube.com/vi/YOUTUBE_ID/mqdefault.jpg"><div class="card-body"><h3>Bán hàng Group FB nâng cao</h3><p>Chiến lược tăng doanh thu hệ thống.</p><a href="#" target="_blank" class="btn">Xem trên YouTube</a></div></div>
-<!-- 3 -->
-<div class="card"><img src="https://img.youtube.com/vi/YOUTUBE_ID/mqdefault.jpg"><div class="card-body"><h3>Xây dựng hệ thống Group</h3><p>Tạo hệ sinh thái group lớn.</p><a href="#" target="_blank" class="btn">Xem trên YouTube</a></div></div>
-<!-- 4 -->
-<div class="card"><img src="https://img.youtube.com/vi/YOUTUBE_ID/mqdefault.jpg"><div class="card-body"><h3>Bảo mật Facebook cơ bản</h3><p>Bảo vệ tài khoản an toàn.</p><a href="#" target="_blank" class="btn">Xem trên YouTube</a></div></div>
-<!-- 5 -->
-<div class="card"><img src="https://img.youtube.com/vi/YOUTUBE_ID/mqdefault.jpg"><div class="card-body"><h3>Mở khóa Facebook</h3><p>Xử lý checkpoint & hạn chế.</p><a href="#" target="_blank" class="btn">Xem trên YouTube</a></div></div>
-<!-- 6 -->
-<div class="card"><img src="https://img.youtube.com/vi/YOUTUBE_ID/mqdefault.jpg"><div class="card-body"><h3>Profile bán hàng cá nhân</h3><p>Tối ưu trang cá nhân để chốt sale.</p><a href="#" target="_blank" class="btn">Xem trên YouTube</a></div></div>
-<!-- 7 -->
-<div class="card"><img src="https://img.youtube.com/vi/YOUTUBE_ID/mqdefault.jpg"><div class="card-body"><h3>Content Facebook thu hút</h3><p>Viết bài tăng tương tác mạnh.</p><a href="#" target="_blank" class="btn">Xem trên YouTube</a></div></div>
-<!-- 8 -->
-<div class="card"><img src="https://img.youtube.com/vi/YOUTUBE_ID/mqdefault.jpg"><div class="card-body"><h3>Livestream bán hàng</h3><p>Kỹ thuật live ra đơn liên tục.</p><a href="#" target="_blank" class="btn">Xem trên YouTube</a></div></div>
-<!-- 9 -->
-<div class="card"><img src="https://img.youtube.com/vi/YOUTUBE_ID/mqdefault.jpg"><div class="card-body"><h3>Reels Facebook thực chiến</h3><p>Tăng reach tự nhiên nhanh.</p><a href="#" target="_blank" class="btn">Xem trên YouTube</a></div></div>
-<!-- 10 -->
-<div class="card"><img src="https://img.youtube.com/vi/YOUTUBE_ID/mqdefault.jpg"><div class="card-body"><h3>Quản trị Page chuyên nghiệp</h3><p>Xây fanpage bền vững.</p><a href="#" target="_blank" class="btn">Xem trên YouTube</a></div></div>
+<footer>
+© 2026 - Trung Tâm Đào Tạo Digital Marketing
+</footer>
+
+<!-- Modal -->
+<div class="modal" id="videoModal">
+<div class="modal-content">
+<div class="close" onclick="closeModal()">✖ Đóng</div>
+<iframe id="videoFrame" src="" frameborder="0" allowfullscreen></iframe>
+</div>
 </div>
 
-<!-- TIKTOK (10) -->
-<h2>TikTok (10 khóa)</h2>
-<div class="grid">
-<div class="card"><img src="https://img.youtube.com/vi/YOUTUBE_ID/mqdefault.jpg"><div class="card-body"><h3>Thực chiến Video TikTok</h3><p>Làm video triệu view.</p><a href="#" target="_blank" class="btn">Xem trên YouTube</a></div></div>
-<div class="card"><img src="https://img.youtube.com/vi/YOUTUBE_ID/mqdefault.jpg"><div class="card-body"><h3>Xây kênh TikTok từ 0</h3><p>Chiến lược tăng follow.</p><a href="#" target="_blank" class="btn">Xem trên YouTube</a></div></div>
-<div class="card"><img src="https://img.youtube.com/vi/YOUTUBE_ID/mqdefault.jpg"><div class="card-body"><h3>Kịch bản TikTok bán hàng</h3><p>Viết kịch bản thu hút.</p><a href="#" target="_blank" class="btn">Xem trên YouTube</a></div></div>
-<div class="card"><img src="https://img.youtube.com/vi/YOUTUBE_ID/mqdefault.jpg"><div class="card-body"><h3>CapCut cơ bản</h3><p>Dựng video nhanh chuyên nghiệp.</p><a href="#" target="_blank" class="btn">Xem trên YouTube</a></div></div>
-<div class="card"><img src="https://img.youtube.com/vi/YOUTUBE_ID/mqdefault.jpg"><div class="card-body"><h3>Livestream TikTok</h3><p>Chiến thuật live ra đơn.</p><a href="#" target="_blank" class="btn">Xem trên YouTube</a></div></div>
-<div class="card"><img src="https://img.youtube.com/vi/YOUTUBE_ID/mqdefault.jpg"><div class="card-body"><h3>Thuật toán TikTok</h3><p>Hiểu cách phân phối video.</p><a href="#" target="_blank" class="btn">Xem trên YouTube</a></div></div>
-<div class="card"><img src="https://img.youtube.com/vi/YOUTUBE_ID/mqdefault.jpg"><div class="card-body"><h3>Content TikTok bán dịch vụ</h3><p>Xây thương hiệu cá nhân.</p><a href="#" target="_blank" class="btn">Xem trên YouTube</a></div></div>
-<div class="card"><img src="https://img.youtube.com/vi/YOUTUBE_ID/mqdefault.jpg"><div class="card-body"><h3>TikTok Ads cơ bản</h3><p>Chạy quảng cáo hiệu quả.</p><a href="#" target="_blank" class="btn">Xem trên YouTube</a></div></div>
-<div class="card"><img src="https://img.youtube.com/vi/YOUTUBE_ID/mqdefault.jpg"><div class="card-body"><h3>Affiliate TikTok Shop</h3><p>Kiếm tiền không cần vốn.</p><a href="#" target="_blank" class="btn">Xem trên YouTube</a></div></div>
-<div class="card"><img src="https://img.youtube.com/vi/YOUTUBE_ID/mqdefault.jpg"><div class="card-body"><h3>Chiến lược scale kênh</h3><p>Mở rộng hệ thống nội dung.</p><a href="#" target="_blank" class="btn">Xem trên YouTube</a></div></div>
-</div>
+<script>
+const categories = [
+"Facebook Bán Hàng",
+"Facebook Ads",
+"TikTok Xây Kênh",
+"TikTok Affiliate",
+"Shopee Affiliate",
+"YouTube Kiếm Tiền",
+"AI Ứng Dụng",
+"Website & SEO",
+"App & Automation",
+"Thương Hiệu Cá Nhân",
+"Hệ Sinh Thái Marketing",
+"Kiếm Tiền Online"
+];
 
-<!-- AI (10) -->
-<h2>AI (10 khóa)</h2>
-<div class="grid">
-<div class="card"><img src="https://img.youtube.com/vi/YOUTUBE_ID/mqdefault.jpg"><div class="card-body"><h3>Tạo nhạc AI Suno</h3><p>Sáng tác nhạc bằng AI.</p><a href="#" target="_blank" class="btn">Xem trên YouTube</a></div></div>
-<div class="card"><img src="https://img.youtube.com/vi/YOUTUBE_ID/mqdefault.jpg"><div class="card-body"><h3>Tạo clip AI YouTube</h3><p>Làm video tự động.</p><a href="#" target="_blank" class="btn">Xem trên YouTube</a></div></div>
-<div class="card"><img src="https://img.youtube.com/vi/YOUTUBE_ID/mqdefault.jpg"><div class="card-body"><h3>ChatGPT ứng dụng kinh doanh</h3><p>Tăng hiệu suất công việc.</p><a href="#" target="_blank" class="btn">Xem trên YouTube</a></div></div>
-<div class="card"><img src="https://img.youtube.com/vi/YOUTUBE_ID/mqdefault.jpg"><div class="card-body"><h3>Thiết kế ảnh bằng AI</h3><p>Tạo hình ảnh marketing.</p><a href="#" target="_blank" class="btn">Xem trên YouTube</a></div></div>
-<div class="card"><img src="https://img.youtube.com/vi/YOUTUBE_ID/mqdefault.jpg"><div class="card-body"><h3>Voice AI thuyết minh</h3><p>Tạo giọng đọc chuyên nghiệp.</p><a href="#" target="_blank" class="btn">Xem trên YouTube</a></div></div>
-<div class="card"><img src="https://img.youtube.com/vi/YOUTUBE_ID/mqdefault.jpg"><div class="card-body"><h3>Automation AI marketing</h3><p>Tự động hóa quy trình.</p><a href="#" target="_blank" class="btn">Xem trên YouTube</a></div></div>
-<div class="card"><img src="https://img.youtube.com/vi/YOUTUBE_ID/mqdefault.jpg"><div class="card-body"><h3>AI viết content bán hàng</h3><p>Tăng chuyển đổi nội dung.</p><a href="#" target="_blank" class="btn">Xem trên YouTube</a></div></div>
-<div class="card"><img src="https://img.youtube.com/vi/YOUTUBE_ID/mqdefault.jpg"><div class="card-body"><h3>AI tạo website</h3><p>Dựng web nhanh bằng AI.</p><a href="#" target="_blank" class="btn">Xem trên YouTube</a></div></div>
-<div class="card"><img src="https://img.youtube.com/vi/YOUTUBE_ID/mqdefault.jpg"><div class="card-body"><h3>AI chỉnh sửa video</h3><p>Tối ưu nội dung nhanh.</p><a href="#" target="_blank" class="btn">Xem trên YouTube</a></div></div>
-<div class="card"><img src="https://img.youtube.com/vi/YOUTUBE_ID/mqdefault.jpg"><div class="card-body"><h3>Ứng dụng AI kiếm tiền</h3><p>Mô hình thu nhập online.</p><a href="#" target="_blank" class="btn">Xem trên YouTube</a></div></div>
-</div>
+const container = document.getElementById("coursesContainer");
+const filterNav = document.getElementById("filterButtons");
 
-<!-- WEBSITE (10) -->
-<h2>Website (10 khóa)</h2>
-<div class="grid">
-<div class="card"><img src="https://img.youtube.com/vi/YOUTUBE_ID/mqdefault.jpg"><div class="card-body"><h3>Blogger cơ bản</h3><p>Tạo blog miễn phí.</p><a href="#" target="_blank" class="btn">Xem trên YouTube</a></div></div>
-<div class="card"><img src="https://img.youtube.com/vi/YOUTUBE_ID/mqdefault.jpg"><div class="card-body"><h3>GitHub Pages</h3><p>Host web miễn phí.</p><a href="#" target="_blank" class="btn">Xem trên YouTube</a></div></div>
-<div class="card"><img src="https://img.youtube.com/vi/YOUTUBE_ID/mqdefault.jpg"><div class="card-body"><h3>Sử dụng tên miền</h3><p>Trỏ domain chuyên nghiệp.</p><a href="#" target="_blank" class="btn">Xem trên YouTube</a></div></div>
-<div class="card"><img src="https://img.youtube.com/vi/YOUTUBE_ID/mqdefault.jpg"><div class="card-body"><h3>Thiết kế web với Canva</h3><p>Tạo landing page nhanh.</p><a href="#" target="_blank" class="btn">Xem trên YouTube</a></div></div>
-<div class="card"><img src="https://img.youtube.com/vi/YOUTUBE_ID/mqdefault.jpg"><div class="card-body"><h3>Rip template Blogger</h3><p>Tùy chỉnh giao diện blog.</p><a href="#" target="_blank" class="btn">Xem trên YouTube</a></div></div>
-<div class="card"><img src="https://img.youtube.com/vi/YOUTUBE_ID/mqdefault.jpg"><div class="card-body"><h3>SEO cơ bản</h3><p>Tối ưu web lên Google.</p><a href="#" target="_blank" class="btn">Xem trên YouTube</a></div></div>
-<div class="card"><img src="https://img.youtube.com/vi/YOUTUBE_ID/mqdefault.jpg"><div class="card-body"><h3>Landing page bán hàng</h3><p>Tăng chuyển đổi.</p><a href="#" target="_blank" class="btn">Xem trên YouTube</a></div></div>
-<div class="card"><img src="https://img.youtube.com/vi/YOUTUBE_ID/mqdefault.jpg"><div class="card-body"><h3>Tối ưu tốc độ web</h3><p>Tăng trải nghiệm người dùng.</p><a href="#" target="_blank" class="btn">Xem trên YouTube</a></div></div>
-<div class="card"><img src="https://img.youtube.com/vi/YOUTUBE_ID/mqdefault.jpg"><div class="card-body"><h3>Thiết kế UI/UX</h3><p>Nâng cao trải nghiệm.</p><a href="#" target="_blank" class="btn">Xem trên YouTube</a></div></div>
-<div class="card"><img src="https://img.youtube.com/vi/YOUTUBE_ID/mqdefault.jpg"><div class="card-body"><h3>Quản lý hosting</h3><p>Vận hành web ổn định.</p><a href="#" target="_blank" class="btn">Xem trên YouTube</a></div></div>
-</div>
+function createCourses(filter="all"){
+    container.innerHTML="";
+    categories.forEach(cat=>{
+        if(filter==="all" || filter===cat){
+            const section=document.createElement("div");
+            section.className="section";
+            section.innerHTML=`<h2>${cat}</h2><div class="grid"></div>`;
+            const grid=section.querySelector(".grid");
 
-<!-- QUẢNG CÁO (10) -->
-<h2>Quảng Cáo & Marketing (10 khóa)</h2>
-<div class="grid">
-<div class="card"><img src="https://img.youtube.com/vi/YOUTUBE_ID/mqdefault.jpg"><div class="card-body"><h3>Facebook Ads cơ bản</h3><p>Chạy quảng cáo từ đầu.</p><a href="#" target="_blank" class="btn">Xem trên YouTube</a></div></div>
-<div class="card"><img src="https://img.youtube.com/vi/YOUTUBE_ID/mqdefault.jpg"><div class="card-body"><h3>Facebook Ads nâng cao</h3><p>Scale chiến dịch.</p><a href="#" target="_blank" class="btn">Xem trên YouTube</a></div></div>
-<div class="card"><img src="https://img.youtube.com/vi/YOUTUBE_ID/mqdefault.jpg"><div class="card-body"><h3>Retargeting hiệu quả</h3><p>Tối ưu chi phí.</p><a href="#" target="_blank" class="btn">Xem trên YouTube</a></div></div>
-<div class="card"><img src="https://img.youtube.com/vi/YOUTUBE_ID/mqdefault.jpg"><div class="card-body"><h3>Xây phễu marketing</h3><p>Hệ thống chuyển đổi.</p><a href="#" target="_blank" class="btn">Xem trên YouTube</a></div></div>
-<div class="card"><img src="https://img.youtube.com/vi/YOUTUBE_ID/mqdefault.jpg"><div class="card-body"><h3>Email Marketing</h3><p>Chăm sóc khách hàng tự động.</p><a href="#" target="_blank" class="btn">Xem trên YouTube</a></div></div>
-<div class="card"><img src="https://img.youtube.com/vi/YOUTUBE_ID/mqdefault.jpg"><div class="card-body"><h3>Content chuyển đổi cao</h3><p>Viết bài ra đơn.</p><a href="#" target="_blank" class="btn">Xem trên YouTube</a></div></div>
-<div class="card"><img src="https://img.youtube.com/vi/YOUTUBE_ID/mqdefault.jpg"><div class="card-body"><h3>Tăng trưởng hệ sinh thái</h3><p>Chiến lược dài hạn.</p><a href="#" target="_blank" class="btn">Xem trên YouTube</a></div></div>
-<div class="card"><img src="https://img.youtube.com/vi/YOUTUBE_ID/mqdefault.jpg"><div class="card-body"><h3>Phân tích dữ liệu quảng cáo</h3><p>Đọc chỉ số chuyên sâu.</p><a href="#" target="_blank" class="btn">Xem trên YouTube</a></div></div>
-<div class="card"><img src="https://img.youtube.com/vi/YOUTUBE_ID/mqdefault.jpg"><div class="card-body"><h3>Chiến lược thương hiệu cá nhân</h3><p>Xây uy tín online.</p><a href="#" target="_blank" class="btn">Xem trên YouTube</a></div></div>
-<div class="card"><img src="https://img.youtube.com/vi/YOUTUBE_ID/mqdefault.jpg"><div class="card-body"><h3>Tối ưu chuyển đổi tổng thể</h3><p>Tăng doanh thu hệ thống.</p><a href="#" target="_blank" class="btn">Xem trên YouTube</a></div></div>
-</div>
+            for(let i=1;i<=10;i++){
+                grid.innerHTML+=`
+                <div class="card">
+                    <img src="https://img.youtube.com/vi/dQw4w9WgXcQ/hqdefault.jpg">
+                    <div class="card-content">
+                        <h3>${cat} - Khóa ${i}</h3>
+                        <p>Hướng dẫn chi tiết từ cơ bản đến nâng cao.</p>
+                        <button onclick="openVideo('dQw4w9WgXcQ')">Xem khóa học</button>
+                    </div>
+                </div>
+                `;
+            }
 
-</div>
+            container.appendChild(section);
+        }
+    });
+}
 
-<footer>© 2026 HTA Academy - Zalo: 0971492222</footer>
+function openVideo(id){
+    document.getElementById("videoModal").style.display="flex";
+    document.getElementById("videoFrame").src=`https://www.youtube.com/embed/${id}`;
+}
+
+function closeModal(){
+    document.getElementById("videoModal").style.display="none";
+    document.getElementById("videoFrame").src="";
+}
+
+categories.forEach(cat=>{
+    const btn=document.createElement("button");
+    btn.innerText=cat;
+    btn.onclick=()=>createCourses(cat);
+    filterNav.appendChild(btn);
+});
+
+const allBtn=document.createElement("button");
+allBtn.innerText="Tất Cả";
+allBtn.onclick=()=>createCourses("all");
+filterNav.prepend(allBtn);
+
+createCourses();
+</script>
 
 </body>
 </html>
