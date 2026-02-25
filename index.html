@@ -1,54 +1,235 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-    <meta charset="UTF-8">
-    <title>Clip.io.vn - Học Online Thực Chiến</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/assets/style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HTA Academy - Hệ thống khóa học miễn phí</title>
+
+<style>
+body{
+    margin:0;
+    font-family:Segoe UI, sans-serif;
+    background:#0f172a;
+    color:white;
+}
+
+header{
+    background:#111827;
+    padding:20px 0;
+    text-align:center;
+    font-size:24px;
+    font-weight:bold;
+    color:#22d3ee;
+}
+
+.hero{
+    text-align:center;
+    padding:60px 20px;
+    background:linear-gradient(135deg,#0f172a,#1e293b);
+}
+
+.hero h1{
+    font-size:40px;
+    margin-bottom:10px;
+}
+
+.container{
+    width:1200px;
+    max-width:95%;
+    margin:auto;
+}
+
+h2{
+    margin-top:60px;
+    color:#22d3ee;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(300px,1fr));
+    gap:25px;
+    margin-top:20px;
+}
+
+.card{
+    background:#1e293b;
+    border-radius:15px;
+    overflow:hidden;
+    transition:0.3s;
+    box-shadow:0 5px 20px rgba(0,0,0,0.4);
+}
+
+.card:hover{
+    transform:translateY(-8px);
+}
+
+.card img{
+    width:100%;
+    height:180px;
+    object-fit:cover;
+}
+
+.card-body{
+    padding:20px;
+}
+
+.card-body h3{
+    margin:0 0 10px;
+    font-size:18px;
+}
+
+.card-body p{
+    font-size:14px;
+    opacity:0.8;
+    min-height:45px;
+}
+
+.btn{
+    display:inline-block;
+    margin-top:10px;
+    padding:8px 16px;
+    background:#22d3ee;
+    color:black;
+    border-radius:8px;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+footer{
+    text-align:center;
+    padding:40px 20px;
+    background:#111827;
+    margin-top:80px;
+}
+</style>
+
 </head>
 <body>
 
-<div id="header"></div>
+<header>HTA Academy - Khóa Học Miễn Phí</header>
 
 <section class="hero">
-    <div class="container">
-        <h1>Nâng cấp kỹ năng - Tăng thu nhập</h1>
-        <p>Học thực chiến từ kinh nghiệm thực tế</p>
-        <a href="#courses" class="btn-primary">Xem khóa học</a>
-    </div>
+    <h1>Hệ Thống Khóa Học Online</h1>
+    <p>Facebook • TikTok • AI • Website • App</p>
 </section>
 
-<section class="courses" id="courses">
-    <div class="container">
-        <div class="course-grid">
+<div class="container">
 
-            <div class="course-card">
-                <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
-                        frameborder="0" allowfullscreen></iframe>
-                <div class="course-content">
-                    <h3>Khóa Marketing Facebook</h3>
-                    <p>Xây dựng hệ sinh thái group & fanpage bài bản.</p>
-                    <a href="#" class="btn-primary">Đăng ký</a>
-                </div>
-            </div>
+<h2>Facebook</h2>
+<div class="grid">
 
-            <div class="course-card">
-                <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
-                        frameborder="0" allowfullscreen></iframe>
-                <div class="course-content">
-                    <h3>Khóa Xây dựng Website</h3>
-                    <p>Tạo web miễn phí bằng GitHub + Domain riêng.</p>
-                    <a href="#" class="btn-primary">Xem chi tiết</a>
-                </div>
-            </div>
+<div class="card">
+<img src="https://img.youtube.com/vi/YOUTUBE_ID/mqdefault.jpg">
+<div class="card-body">
+<h3>Bán hàng Group FB cơ bản</h3>
+<p>Thực chiến bán hàng trong group Facebook từ A-Z.</p>
+<a href="https://youtube.com/" target="_blank" class="btn">Xem trên YouTube</a>
+</div>
+</div>
 
-        </div>
-    </div>
-</section>
+<div class="card">
+<img src="https://img.youtube.com/vi/YOUTUBE_ID/mqdefault.jpg">
+<div class="card-body">
+<h3>Bán hàng Group FB nâng cao</h3>
+<p>Chiến lược scale hệ thống group và tăng doanh thu.</p>
+<a href="#" target="_blank" class="btn">Xem trên YouTube</a>
+</div>
+</div>
 
-<div id="footer"></div>
+<div class="card">
+<img src="https://img.youtube.com/vi/YOUTUBE_ID/mqdefault.jpg">
+<div class="card-body">
+<h3>Xây dựng hệ thống Group FB</h3>
+<p>Tạo hệ sinh thái group lớn và kiếm tiền bền vững.</p>
+<a href="#" target="_blank" class="btn">Xem trên YouTube</a>
+</div>
+</div>
 
-<script src="/assets/layout.js"></script>
+</div>
+
+<h2>TikTok</h2>
+<div class="grid">
+
+<div class="card">
+<img src="https://img.youtube.com/vi/YOUTUBE_ID/mqdefault.jpg">
+<div class="card-body">
+<h3>Thực chiến Video TikTok</h3>
+<p>Cách làm video TikTok tăng follow nhanh.</p>
+<a href="#" target="_blank" class="btn">Xem trên YouTube</a>
+</div>
+</div>
+
+<div class="card">
+<img src="https://img.youtube.com/vi/YOUTUBE_ID/mqdefault.jpg">
+<div class="card-body">
+<h3>Xây kênh TikTok</h3>
+<p>Chiến lược phát triển kênh từ 0 lên 10k follow.</p>
+<a href="#" target="_blank" class="btn">Xem trên YouTube</a>
+</div>
+</div>
+
+</div>
+
+<h2>AI</h2>
+<div class="grid">
+
+<div class="card">
+<img src="https://img.youtube.com/vi/YOUTUBE_ID/mqdefault.jpg">
+<div class="card-body">
+<h3>Tạo nhạc AI Suno</h3>
+<p>Hướng dẫn tạo nhạc AI bằng Suno.</p>
+<a href="#" target="_blank" class="btn">Xem trên YouTube</a>
+</div>
+</div>
+
+<div class="card">
+<img src="https://img.youtube.com/vi/YOUTUBE_ID/mqdefault.jpg">
+<div class="card-body">
+<h3>Tạo clip AI YouTube</h3>
+<p>Tạo video AI tự động kiếm tiền YouTube.</p>
+<a href="#" target="_blank" class="btn">Xem trên YouTube</a>
+</div>
+</div>
+
+</div>
+
+<h2>Website & App</h2>
+<div class="grid">
+
+<div class="card">
+<img src="https://img.youtube.com/vi/YOUTUBE_ID/mqdefault.jpg">
+<div class="card-body">
+<h3>Tạo Website Blogger cơ bản</h3>
+<p>Tự tạo blog chuyên nghiệp miễn phí.</p>
+<a href="#" target="_blank" class="btn">Xem trên YouTube</a>
+</div>
+</div>
+
+<div class="card">
+<img src="https://img.youtube.com/vi/YOUTUBE_ID/mqdefault.jpg">
+<div class="card-body">
+<h3>Tạo Website GitHub cơ bản</h3>
+<p>Host web miễn phí bằng GitHub Pages.</p>
+<a href="#" target="_blank" class="btn">Xem trên YouTube</a>
+</div>
+</div>
+
+<div class="card">
+<img src="https://img.youtube.com/vi/YOUTUBE_ID/mqdefault.jpg">
+<div class="card-body">
+<h3>Lập trình Appsheet</h3>
+<p>Tạo app quản lý mà không cần code.</p>
+<a href="#" target="_blank" class="btn">Xem trên YouTube</a>
+</div>
+</div>
+
+</div>
+
+</div>
+
+<footer>
+© 2026 HTA Academy - Liên hệ Zalo: 0971492222
+</footer>
 
 </body>
 </html>
