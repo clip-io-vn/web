@@ -2,53 +2,50 @@
 <html lang="vi">
 <head>
 <meta charset="UTF-8">
-<title>Quick Note - HoangTuanAnh</title>
+<title>Quick Note</title>
 <style>
-    body {
-        margin: 0;
-        font-family: Arial, sans-serif;
-        background: #ffffff;
-    }
-
-    .toolbar {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        background: #f5f5f5;
-        padding: 6px 10px;
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        border-bottom: 1px solid #ddd;
-        z-index: 10;
-    }
-
-    .toolbar button, .toolbar select {
-        font-size: 14px;
-        padding: 4px 8px;
-        border: 1px solid #ccc;
-        background: white;
-        cursor: pointer;
-    }
-
-    #editor {
-        margin-top: 42px;
-        padding: 20px;
-        width: 100%;
-        height: calc(100vh - 42px);
-        box-sizing: border-box;
-        outline: none;
-        overflow-y: auto;
-        font-size: 18px;
-    }
+body{
+    margin:0;
+    font-family:Arial;
+    background:#ffffff;
+}
+.toolbar{
+    position:fixed;
+    top:0;
+    width:100%;
+    background:#f5f5f5;
+    padding:6px 10px;
+    display:flex;
+    align-items:center;
+    gap:8px;
+    border-bottom:1px solid #ddd;
+}
+button, select{
+    padding:4px 8px;
+    cursor:pointer;
+}
+#stats{
+    margin-left:auto;
+    font-size:14px;
+    color:#555;
+}
+textarea{
+    margin-top:42px;
+    width:100%;
+    height:calc(100vh - 42px);
+    border:none;
+    outline:none;
+    resize:none;
+    padding:20px;
+    font-size:18px;
+    box-sizing:border-box;
+}
 </style>
 </head>
 <body>
 
 <div class="toolbar">
-    <button onclick="formatText('bold')"><b>B</b></button>
-    <button onclick="formatText('italic')"><i>I</i></button>
+    <button onclick="toggleBold()"><b>B</b></button>
 
     <select onchange="changeFontSize(this.value)">
         <option value="14px">14px</option>
@@ -59,46 +56,72 @@
         <option value="28px">28px</option>
     </select>
 
-    <button onclick="copyText()">Copy</button>
-    <button onclick="download()">Lưu</button>
+    <button onclick="saveLocal()">Lưu</button>
+    <button onclick="download()">Tải</button>
+    <button onclick="clearText()">Xóa hết</button>
+
+    <div id="stats">0 ký tự | 0 dòng</div>
 </div>
 
-<div id="editor" contenteditable="true"></div>
+<textarea id="note" placeholder="Gõ nội dung..."></textarea>
 
 <script>
-const editor = document.getElementById("editor");
+const textarea = document.getElementById("note");
+const stats = document.getElementById("stats");
 
-// Load nội dung khi mở
-editor.innerHTML = localStorage.getItem("quicknote") || "";
+// Load nếu đã lưu
+textarea.value = localStorage.getItem("quicknote") || "";
+updateStats();
 
-// Tự động lưu
-editor.addEventListener("input", () => {
-    localStorage.setItem("quicknote", editor.innerHTML);
+// Tự cập nhật thống kê
+textarea.addEventListener("input", ()=>{
+    updateStats();
 });
 
-// Format text
-function formatText(command) {
-    document.execCommand(command, false, null);
+// Đếm ký tự & dòng
+function updateStats(){
+    const text = textarea.value;
+    const chars = text.length;
+    const lines = text.split("\n").length;
+    stats.innerText = chars + " ký tự | " + lines + " dòng";
 }
 
 // Đổi cỡ chữ
-function changeFontSize(size) {
-    editor.style.fontSize = size;
+function changeFontSize(size){
+    textarea.style.fontSize = size;
 }
 
-// Copy nội dung
-function copyText() {
-    navigator.clipboard.writeText(editor.innerText);
-    alert("Đã copy!");
+// Toggle bold toàn bộ
+function toggleBold(){
+    if(textarea.style.fontWeight === "bold"){
+        textarea.style.fontWeight = "normal";
+    }else{
+        textarea.style.fontWeight = "bold";
+    }
 }
 
-// Tải file
-function download() {
-    const blob = new Blob([editor.innerText], { type: "text/plain" });
+// Lưu local
+function saveLocal(){
+    localStorage.setItem("quicknote", textarea.value);
+    alert("Đã lưu!");
+}
+
+// Tải file txt
+function download(){
+    const blob = new Blob([textarea.value], {type:"text/plain"});
     const link = document.createElement("a");
     link.href = URL.createObjectURL(blob);
     link.download = "note.txt";
     link.click();
+}
+
+// Xóa hết
+function clearText(){
+    if(confirm("Xóa toàn bộ nội dung?")){
+        textarea.value = "";
+        updateStats();
+        localStorage.removeItem("quicknote");
+    }
 }
 </script>
 
