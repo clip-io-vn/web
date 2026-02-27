@@ -2,11 +2,10 @@
 <html lang="vi">
 <head>
 <meta charset="UTF-8">
-<title>Quick Note</title>
+<title>Quick Note Pro</title>
 <style>
 body{
     margin:0;
-    font-family:Arial;
     background:#ffffff;
 }
 .toolbar{
@@ -19,10 +18,13 @@ body{
     align-items:center;
     gap:8px;
     border-bottom:1px solid #ddd;
+    font-family:Arial;
 }
 button, select{
     padding:4px 8px;
     cursor:pointer;
+    border:1px solid #ccc;
+    background:#fff;
 }
 #stats{
     margin-left:auto;
@@ -38,6 +40,7 @@ textarea{
     resize:none;
     padding:20px;
     font-size:18px;
+    font-family:Arial;
     box-sizing:border-box;
 }
 </style>
@@ -45,6 +48,7 @@ textarea{
 <body>
 
 <div class="toolbar">
+
     <button onclick="toggleBold()"><b>B</b></button>
 
     <select onchange="changeFontSize(this.value)">
@@ -56,11 +60,20 @@ textarea{
         <option value="28px">28px</option>
     </select>
 
-    <button onclick="saveLocal()">Lưu</button>
+    <select onchange="changeFont(this.value)">
+        <option value="Arial">Arial</option>
+        <option value="Tahoma">Tahoma</option>
+        <option value="Times New Roman">Times</option>
+        <option value="Courier New">Courier</option>
+        <option value="Verdana">Verdana</option>
+    </select>
+
+    <button onclick="insertIcon()">Icon</button>
+    <button onclick="copyText()">Copy</button>
     <button onclick="download()">Tải</button>
     <button onclick="clearText()">Xóa hết</button>
 
-    <div id="stats">0 ký tự | 0 dòng</div>
+    <div id="stats">0 ký tự | 0 dòng | 0 từ</div>
 </div>
 
 <textarea id="note" placeholder="Gõ nội dung..."></textarea>
@@ -69,21 +82,29 @@ textarea{
 const textarea = document.getElementById("note");
 const stats = document.getElementById("stats");
 
-// Load nếu đã lưu
+// Load nội dung
 textarea.value = localStorage.getItem("quicknote") || "";
 updateStats();
 
-// Tự cập nhật thống kê
+// Auto save
 textarea.addEventListener("input", ()=>{
+    localStorage.setItem("quicknote", textarea.value);
     updateStats();
 });
 
-// Đếm ký tự & dòng
+// Thống kê
 function updateStats(){
     const text = textarea.value;
     const chars = text.length;
-    const lines = text.split("\n").length;
-    stats.innerText = chars + " ký tự | " + lines + " dòng";
+    const lines = text ? text.split("\n").length : 0;
+    const words = text.trim() ? text.trim().split(/\s+/).length : 0;
+    stats.innerText = chars + " ký tự | " + lines + " dòng | " + words + " từ";
+}
+
+// Bold toàn bộ
+function toggleBold(){
+    textarea.style.fontWeight =
+        textarea.style.fontWeight === "bold" ? "normal" : "bold";
 }
 
 // Đổi cỡ chữ
@@ -91,22 +112,32 @@ function changeFontSize(size){
     textarea.style.fontSize = size;
 }
 
-// Toggle bold toàn bộ
-function toggleBold(){
-    if(textarea.style.fontWeight === "bold"){
-        textarea.style.fontWeight = "normal";
-    }else{
-        textarea.style.fontWeight = "bold";
-    }
+// Đổi font
+function changeFont(font){
+    textarea.style.fontFamily = font;
 }
 
-// Lưu local
-function saveLocal(){
+// Chèn icon ngẫu nhiên
+function insertIcon(){
+    const icons = ["🔥","🚀","✅","💰","📌","⭐","⚡","🎯","💡","📢","📈","👑"];
+    const random = icons[Math.floor(Math.random()*icons.length)];
+    const start = textarea.selectionStart;
+    const end = textarea.selectionEnd;
+    const text = textarea.value;
+    textarea.value = text.substring(0,start) + random + text.substring(end);
+    textarea.focus();
+    textarea.selectionStart = textarea.selectionEnd = start + 2;
     localStorage.setItem("quicknote", textarea.value);
-    alert("Đã lưu!");
+    updateStats();
 }
 
-// Tải file txt
+// Copy
+function copyText(){
+    navigator.clipboard.writeText(textarea.value);
+    alert("Đã copy!");
+}
+
+// Tải file
 function download(){
     const blob = new Blob([textarea.value], {type:"text/plain"});
     const link = document.createElement("a");
@@ -119,8 +150,8 @@ function download(){
 function clearText(){
     if(confirm("Xóa toàn bộ nội dung?")){
         textarea.value = "";
-        updateStats();
         localStorage.removeItem("quicknote");
+        updateStats();
     }
 }
 </script>
