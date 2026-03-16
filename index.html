@@ -2,224 +2,170 @@
 <html lang="vi">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Trung Tâm Khóa Học Online</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<title>Clip.io.vn - Học kiếm tiền Online</title>
+
 <style>
+
 body{
-    margin:0;
-    font-family:'Poppins',sans-serif;
-    background:#0f172a;
-    color:#fff;
+font-family: Arial, sans-serif;
+margin:0;
+background:#f5f6fa;
 }
-header{
-    background:linear-gradient(90deg,#0ea5e9,#2563eb);
-    padding:60px 20px;
-    text-align:center;
+
+.topbar{
+background:#111;
+padding:12px 20px;
 }
-header h1{
-    font-size:38px;
-    margin:0;
+
+.topbar a{
+color:white;
+text-decoration:none;
+margin-right:20px;
+font-weight:bold;
 }
-header p{
-    margin-top:10px;
+
+.header{
+text-align:center;
+padding:60px 20px;
+background:white;
 }
-nav{
-    background:#1e293b;
-    padding:15px;
-    text-align:center;
+
+.header h1{
+margin:0;
+font-size:36px;
 }
-nav button{
-    margin:5px;
-    padding:8px 14px;
-    border:none;
-    border-radius:6px;
-    background:#334155;
-    color:#fff;
-    cursor:pointer;
-}
-nav button:hover{
-    background:#0ea5e9;
-}
+
 .container{
-    width:95%;
-    max-width:1400px;
-    margin:auto;
+max-width:1100px;
+margin:auto;
+padding:30px;
 }
-.section{
-    margin:50px 0;
-}
-.section h2{
-    border-left:5px solid #0ea5e9;
-    padding-left:10px;
-}
+
 .grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:20px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:25px;
 }
+
 .card{
-    background:#1e293b;
-    border-radius:12px;
-    overflow:hidden;
-    transition:0.3s;
+background:white;
+padding:25px;
+border-radius:10px;
+box-shadow:0 4px 12px rgba(0,0,0,0.08);
 }
-.card:hover{
-    transform:translateY(-5px);
+
+.card h2{
+margin-top:0;
 }
-.card img{
-    width:100%;
+
+.btn{
+display:inline-block;
+margin-top:15px;
+padding:10px 18px;
+background:#ff5722;
+color:white;
+text-decoration:none;
+border-radius:6px;
 }
-.card-content{
-    padding:15px;
+
+.btn:hover{
+background:#e64a19;
 }
-.card h3{
-    font-size:15px;
-    margin-bottom:8px;
+
+.footer{
+text-align:center;
+padding:30px;
+color:#666;
 }
-.card p{
-    font-size:13px;
-    color:#cbd5e1;
-    height:40px;
-    overflow:hidden;
-}
-.card button{
-    margin-top:10px;
-    padding:8px 12px;
-    border:none;
-    background:#0ea5e9;
-    color:#000;
-    font-weight:600;
-    border-radius:6px;
-    cursor:pointer;
-}
-footer{
-    background:#1e293b;
-    text-align:center;
-    padding:30px;
-    margin-top:50px;
-}
-.modal{
-    display:none;
-    position:fixed;
-    top:0;left:0;
-    width:100%;
-    height:100%;
-    background:rgba(0,0,0,0.8);
-    justify-content:center;
-    align-items:center;
-}
-.modal-content{
-    width:90%;
-    max-width:800px;
-}
-.modal iframe{
-    width:100%;
-    height:450px;
-}
-.close{
-    text-align:right;
-    font-size:20px;
-    cursor:pointer;
-    margin-bottom:5px;
-}
+
 </style>
+
 </head>
+
 <body>
 
-<header>
-<h1>HỆ SINH THÁI KHÓA HỌC ONLINE</h1>
-<p>120+ Khóa Học Miễn Phí | Facebook • TikTok • AI • Website • Affiliate</p>
-<br>
-<a href="https://youtube.com/" target="_blank" style="background:#fff;color:#000;padding:10px 20px;border-radius:8px;text-decoration:none;font-weight:600;">Đăng Ký Kênh YouTube</a>
-</header>
-
-<nav id="filterButtons"></nav>
-
-<div class="container" id="coursesContainer"></div>
-
-<footer>
-© 2026 - Trung Tâm Đào Tạo Digital Marketing
-</footer>
-
-<!-- Modal -->
-<div class="modal" id="videoModal">
-<div class="modal-content">
-<div class="close" onclick="closeModal()">✖ Đóng</div>
-<iframe id="videoFrame" src="" frameborder="0" allowfullscreen></iframe>
-</div>
+<div class="topbar">
+<a href="/">Trang chủ</a>
 </div>
 
-<script>
-const categories = [
-"Facebook Bán Hàng",
-"Facebook Ads",
-"TikTok Xây Kênh",
-"TikTok Affiliate",
-"Shopee Affiliate",
-"YouTube Kiếm Tiền",
-"AI Ứng Dụng",
-"Website & SEO",
-"App & Automation",
-"Thương Hiệu Cá Nhân",
-"Hệ Sinh Thái Marketing",
-"Kiếm Tiền Online"
-];
+<div class="header">
+<h1>Clip.io.vn</h1>
+<p>Nền tảng chia sẻ kiến thức kiếm tiền online thực chiến</p>
+</div>
 
-const container = document.getElementById("coursesContainer");
-const filterNav = document.getElementById("filterButtons");
+<div class="container">
 
-function createCourses(filter="all"){
-    container.innerHTML="";
-    categories.forEach(cat=>{
-        if(filter==="all" || filter===cat){
-            const section=document.createElement("div");
-            section.className="section";
-            section.innerHTML=`<h2>${cat}</h2><div class="grid"></div>`;
-            const grid=section.querySelector(".grid");
+<div class="grid">
 
-            for(let i=1;i<=10;i++){
-                grid.innerHTML+=`
-                <div class="card">
-                    <img src="https://img.youtube.com/vi/dQw4w9WgXcQ/hqdefault.jpg">
-                    <div class="card-content">
-                        <h3>${cat} - Khóa ${i}</h3>
-                        <p>Hướng dẫn chi tiết từ cơ bản đến nâng cao.</p>
-                        <button onclick="openVideo('dQw4w9WgXcQ')">Xem khóa học</button>
-                    </div>
-                </div>
-                `;
-            }
+<div class="card">
+<h2>Affiliate Shopee</h2>
 
-            container.appendChild(section);
-        }
-    });
-}
+<p>
+Khóa học dành cho người mới muốn kiếm tiền với Shopee Affiliate.
+</p>
 
-function openVideo(id){
-    document.getElementById("videoModal").style.display="flex";
-    document.getElementById("videoFrame").src=`https://www.youtube.com/embed/${id}`;
-}
+<ul>
+<li>Đăng ký Affiliate</li>
+<li>Tạo link sản phẩm</li>
+<li>Làm video bán hàng</li>
+<li>Có đơn đầu tiên</li>
+</ul>
 
-function closeModal(){
-    document.getElementById("videoModal").style.display="none";
-    document.getElementById("videoFrame").src="";
-}
+<a class="btn" href="/aff-shopee/">
+Vào khóa học
+</a>
 
-categories.forEach(cat=>{
-    const btn=document.createElement("button");
-    btn.innerText=cat;
-    btn.onclick=()=>createCourses(cat);
-    filterNav.appendChild(btn);
-});
+</div>
 
-const allBtn=document.createElement("button");
-allBtn.innerText="Tất Cả";
-allBtn.onclick=()=>createCourses("all");
-filterNav.prepend(allBtn);
 
-createCourses();
-</script>
+<div class="card">
+<h2>Tạo Clip AI</h2>
+
+<p>
+Học cách tạo video bằng AI để làm nội dung TikTok và kiếm tiền online.
+</p>
+
+<ul>
+<li>Tạo video tự động</li>
+<li>Dùng AI tạo nội dung</li>
+<li>Tạo video viral</li>
+<li>Tăng view kênh</li>
+</ul>
+
+<a class="btn" href="/ai-video/">
+Vào khóa học
+</a>
+
+</div>
+
+
+<div class="card">
+<h2>Bán hàng Facebook Group</h2>
+
+<p>
+Hướng dẫn xây dựng và khai thác Facebook Group để bán hàng hiệu quả.
+</p>
+
+<ul>
+<li>Tạo group bán hàng</li>
+<li>Tăng thành viên</li>
+<li>Đăng bài thu hút</li>
+<li>Tạo đơn mỗi ngày</li>
+</ul>
+
+<a class="btn" href="/fb-group/">
+Vào khóa học
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="footer">
+Clip.io.vn © 2026
+</div>
 
 </body>
 </html>
